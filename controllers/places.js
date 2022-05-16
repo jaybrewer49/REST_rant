@@ -3,17 +3,17 @@ const app = require('express').Router()
 // GET /places
 app.get('/', (req, res) => {
     let places = [{
-        name: 'H-Thai-ML',
-        city: 'Seattle',
-        state: 'WA',
-        cuisines: 'Thai, Pan-Asian',
-        pic: 'http://placekitten.com/240/240'
+        name: 'Chritys',
+        city: 'Greenville',
+        state: 'NC',
+        cuisines: 'Euro Pub',
+        pic: 'https://img.restaurantguru.com/re4d-design-Christys-Euro-Pub.jpg'
       }, {
-        name: 'Coding Cat Cafe',
-        city: 'Phoenix',
-        state: 'AZ',
-        cuisines: 'Coffee, Bakery',
-        pic: 'http://placekitten.com/250/250'
+        name: 'Sup Dogs',
+        city: 'Greenville',
+        state: 'NC',
+        cuisines: 'Hot Dogs and Hamburgers',
+        pic: 'https://gray-witn-prod.cdn.arcpublishing.com/resizer/EBDQhlXbhsrXP9AnHHT0tQ8FSBs=/1200x675/smart/filters:quality(85)/cloudfront-us-east-1.images.arcpublishing.com/gray/MRA6OIUOYBPZHG2BCO4ZHA4K4I.jpg'
       }]
       
       res.render('places/index', { places })
