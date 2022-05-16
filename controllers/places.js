@@ -7,7 +7,7 @@ app.get('/', (req, res) => {
         city: 'Seattle',
         state: 'WA',
         cuisines: 'Thai, Pan-Asian',
-        pic: 'http://placekitten.com/250/250'
+        pic: 'http://placekitten.com/240/240'
       }, {
         name: 'Coding Cat Cafe',
         city: 'Phoenix',
