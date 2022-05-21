@@ -22,11 +22,6 @@ app.get('/', (req, res) => {
 
   app.get('/new', (req, res) => {
       let newPage = [{        
-        name: 'N/A',
-        city: 'N/A',
-        state: 'NC',
-        cuisines: 'Euro Pub',
-        pic: 'https://img.restaurantguru.com/re4d-design-Christys-Euro-Pub.jpg'
       }]
       res.render('places/new', { newPage })
   })
