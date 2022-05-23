@@ -5,8 +5,20 @@ const places = require('../models/places.js')
   res.render('places/index', { places })
  })
 
- app.post('/', (req, res) => {
+app.get('/:id', (req, res) => {
+  let id = Number(req.params.id)
+  if (isNaN(id)) {
+    res.render('error404')
+  }
+  else if (!places[id]) {
+    res.render('error404')
+  }
+  else {
+    res.render('places/show', {place: places[id] })
+  }
+})
 
+ app.post('/', (req, res) => {
   if (!req.body.pic) {
     // Default image if one is not provided
     req.body.pic = 'http://placekitten.com/400/400'
@@ -29,4 +41,3 @@ const places = require('../models/places.js')
   })
 
 module.exports = app
-

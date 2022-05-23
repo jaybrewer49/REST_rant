@@ -1,6 +1,7 @@
 h1 {
     text-align: center;
-    color: cornflowerblue;
+    color: rgb(100, 237, 178);
+    
 }
 
   img {width: 250px;
@@ -14,3 +15,25 @@ h1 {
     text-align: center;
     padding: 10px 20px;
   }
+
+/*NAV BARD*/
+  nav {
+      background-color: yellowgreen;
+      padding: 10px;
+  }
+  nav ul {
+    list-style-type: square;
+    margin: 0;
+  }
+  nav li {
+      display: inline;
+      margin-right: 25px;
+    }
+    nav a {
+        color: white;
+        font-size: 1.5em;
+    }
+    nav a:hover {
+        color: blueviolet;
+        text-decoration: none;
+    }

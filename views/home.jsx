@@ -4,6 +4,9 @@ const Def = require('./default')
 function home () {
     return (
         <Def>
+            <head>
+                <title>Title </title>
+            </head>
             <main>
                 <h1>REST-Rant</h1>
                 <div>
