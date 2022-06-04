@@ -1,11 +1,7 @@
 const app = require('express').Router()
 const places = require('../models/places.js')
 
-  app.get('/', (req, res) => { 
-  res.render('places/index', { places })
- })
-
-app.get('/:id', (req, res) => {
+app.delete('/places/:id', (req, res) => {
   let id = Number(req.params.id)
   if (isNaN(id)) {
     res.render('error404')
@@ -14,9 +10,14 @@ app.get('/:id', (req, res) => {
     res.render('error404')
   }
   else {
-    res.render('places/show', {place: places[id] })
+    places.splice(id, 1)
+    res.redirect('/places')
   }
 })
+
+  app.get('/', (req, res) => { 
+  res.render('places/index', { places })
+ })
 
  app.post('/', (req, res) => {
   if (!req.body.pic) {
@@ -33,11 +34,23 @@ app.get('/:id', (req, res) => {
   res.redirect('/places')
 })
 
-
   app.get('/new', (req, res) => {
       let newPage = [{        
       }]
       res.render('places/new', { newPage })
+  })
+ 
+  app.get('/:id', (req, res) => {
+    let id = Number(req.params.id)
+    if (isNaN(id)) {
+      res.render('error404')
+    }
+    else if (!places[id]) {
+      res.render('error404')
+    }
+    else {
+      res.render('places/show', {place: places[id], id})
+    }
   })
 
 module.exports = app
